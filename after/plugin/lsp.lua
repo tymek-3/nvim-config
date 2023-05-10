@@ -11,7 +11,8 @@ end)
 lsp.ensure_installed({
 	'tsserver',
 	'lua_ls',
-	'omnisharp'
+	'omnisharp',
+	'rust_analyzer'
 })
 
 -- (Optional) Configure lua language server for neovim
