@@ -1,5 +1,5 @@
 function ColorMe(color)
-	color = color or "onedark"
+	color = color or "catppuccin"
 	vim.cmd.colorscheme(color)
 end
 

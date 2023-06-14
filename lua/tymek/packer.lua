@@ -12,9 +12,6 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use({"olimorris/onedarkpro.nvim",
-	as = "onedarkpro",
-	config = function () vim.cmd("colorscheme onedark") end})
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('theprimeagen/harpoon')
@@ -45,5 +42,6 @@ return require('packer').startup(function(use)
 		}
 	}
 	use ('m4xshen/autoclose.nvim')
+	use { "catppuccin/nvim", as = "catppuccin"}
 
 end)
