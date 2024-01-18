@@ -26,7 +26,7 @@ return {
 	{'L3MON4D3/LuaSnip'},
 	-- LSP ZERO
 
-	{'nvim-tree/nvim-tree.lua', dependencies = {'nvim-tree/nvim-web-devicons'}},
+	-- {'nvim-tree/nvim-tree.lua', dependencies = {'nvim-tree/nvim-web-devicons'}},
 
 	{'xiyaowong/transparent.nvim', lazy = false, priority = 1000},
 
