@@ -40,6 +40,7 @@ return {
         -- add any options here 
 		lazy = false }
 	},
-
 	{'ThePrimeagen/vim-be-good'},
+    {'hrsh7th/vim-vsnip'},
+    {'ionide/Ionide-vim'},
 }
