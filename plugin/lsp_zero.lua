@@ -15,6 +15,13 @@ require('ionide').setup({
     capabilities = lsp_zero.capabilites
 })
 
+require("lspconfig").emmet_language_server.setup({
+    filetypes = {
+        "html",
+        "svelte",
+    }
+})
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
