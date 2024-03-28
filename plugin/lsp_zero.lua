@@ -44,7 +44,13 @@ cmp.setup({
             behaviour = cmp.ConfirmBehavior.Replace,
             select = true
         },
-        ['<C-Space>'] = cmp.mapping.complete()
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-k>'] = cmp.mapping.select_prev_item {
+            behaviour = cmp.SelectBehavior.Select
+        },
+        ['<C-j>'] = cmp.mapping.select_next_item {
+            behaviour = cmp.SelectBehavior.Select
+        }
 
     }
 })
