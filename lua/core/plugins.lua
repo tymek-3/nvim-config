@@ -100,5 +100,6 @@ return {
         config = true
         -- use opts = {} for passing setup options
         -- this is equalent to setup({}) function
-    }
+    },
+    { 'kevinhwang91/rnvimr', lazy = false, },
 }
