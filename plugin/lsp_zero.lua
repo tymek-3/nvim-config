@@ -19,6 +19,9 @@ require("lspconfig").emmet_language_server.setup({
     filetypes = {
         "html",
         "svelte",
+        "razor",
+        "cshtml",
+        "templ",
     }
 })
 
@@ -26,6 +29,13 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'omnisharp',
+        'gopls',
+        'templ',
+        'htmx',
+        'svelte',
+        'tsserver',
+        'emmet_language_server',
+        'lua_ls',
     },
     handlers = {
         lsp_zero.default_setup,
@@ -54,5 +64,7 @@ cmp.setup({
 
     }
 })
+
+vim.filetype.add({ extension = { templ = "templ" } })
 
 require('lspconfig').lua_ls.setup({})
