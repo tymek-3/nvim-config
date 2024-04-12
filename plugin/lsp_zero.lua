@@ -15,14 +15,32 @@ require('ionide').setup({
     capabilities = lsp_zero.capabilites
 })
 
-require("lspconfig").emmet_language_server.setup({
+local lspconfig = require("lspconfig")
+
+lspconfig.emmet_language_server.setup({
     filetypes = {
         "html",
         "svelte",
-        "razor",
-        "cshtml",
         "templ",
-    }
+    },
+    on_init = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentFormattingRangeProvider = false
+    end
+})
+
+lspconfig.templ.setup({
+    on_init = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentFormattingRangeProvider = false
+    end
+})
+
+lspconfig.html.setup({
+    on_init = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentFormattingRangeProvider = false
+    end,
 })
 
 require('mason').setup({})
