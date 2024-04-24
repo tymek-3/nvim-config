@@ -63,6 +63,10 @@ require('mason-lspconfig').setup({
 local cmp = require('cmp')
 
 cmp.setup({
+    sources = {
+        { name = "luasnip" },
+        { name = "nvim_lsp" },
+    },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm {
             behaviour = cmp.ConfirmBehavior.Replace,
@@ -79,8 +83,7 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.select_next_item {
             behaviour = cmp.SelectBehavior.Select
         }
-
-    }
+    },
 })
 
 vim.filetype.add({ extension = { templ = "templ" } })

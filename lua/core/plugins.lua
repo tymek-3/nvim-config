@@ -34,7 +34,12 @@ return {
     {
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
     },
+    { 'saadparwaiz1/cmp_luasnip' },
     -- LSP ZERO
 
     -- {
@@ -86,7 +91,7 @@ return {
     {
         "vhyrro/luarocks.nvim",
         config = function()
-            require("luarocks").setup({})
+            -- require("luarocks").setup({})
         end,
     },
     {
@@ -102,5 +107,13 @@ return {
         -- this is equalent to setup({}) function
     },
     { 'kevinhwang91/rnvimr',         lazy = false, },
-    { 'jmederosalvarado/roslyn.nvim' }
+    { 'jmederosalvarado/roslyn.nvim' },
+    {
+        'brenoprata10/nvim-highlight-colors',
+        opts = {
+            enable_tailwind = true,
+        }
+    },
+    { "kmonad/kmonad-vim" },
+    -- { "luukvbaal/nnn.nvim" },
 }
