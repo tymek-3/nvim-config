@@ -211,7 +211,7 @@
   "Interface": {
     "prefix": "interface",
     "body": [
-      "interface I${1:Name} {",
+      "public interface I${1:$TM_FILENAME_BASE} {",
       "    $0",
       "}"
     ],
