@@ -10,6 +10,11 @@ end)
 
 -- here you can setup the language servers
 
+require("roslyn").setup({
+    on_attach = lsp_zero.on_attach,
+    capabilities = lsp_zero.capabilites
+})
+
 require('ionide').setup({
     on_attach = lsp_zero.on_attach,
     capabilities = lsp_zero.capabilites
@@ -46,7 +51,7 @@ lspconfig.html.setup({
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'omnisharp',
+        -- 'omnisharp',
         'gopls',
         'templ',
         'htmx',

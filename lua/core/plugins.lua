@@ -131,4 +131,16 @@ return {
     },
     { "kmonad/kmonad-vim" },
     -- { "luukvbaal/nnn.nvim" },
+    {
+        "DreamMaoMao/yazi.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+
+        keys = {
+            { "<leader>py", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+        },
+    },
+    { "jmederosalvarado/roslyn.nvim" },
 }
