@@ -48,6 +48,13 @@ lspconfig.html.setup({
     end,
 })
 
+lspconfig.sqls.setup({
+    on_init = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentFormattingRangeProvider = false
+    end,
+})
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {

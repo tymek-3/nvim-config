@@ -2,6 +2,15 @@ vim.opt.termguicolors = true
 
 require('tokyonight').setup({ transparent = vim.g.transparent_enabled })
 
+-- require("cyberdream").setup({
+--     -- Recommended - see "Configuring" below for more config options
+--     transparent = true,
+--     italic_comments = true,
+--     hide_fillchars = true,
+--     borderless_telescope = true,
+--     terminal_colors = false,
+-- })
+
 require('transparent').setup({
     groups = { -- table: default groups
         'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
