@@ -28,6 +28,21 @@ return {
         lazy = false,
         priority = 1000,
     },
+    {
+        "eldritch-theme/eldritch.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "Mofiqul/dracula.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+    },
     -- LSP ZERO
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },

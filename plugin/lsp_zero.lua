@@ -34,26 +34,17 @@ lspconfig.emmet_language_server.setup({
     end
 })
 
-lspconfig.templ.setup({
+local noAutoformatSetup = {
     on_init = function(client)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentFormattingRangeProvider = false
     end
-})
+}
 
-lspconfig.html.setup({
-    on_init = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentFormattingRangeProvider = false
-    end,
-})
 
-lspconfig.sqls.setup({
-    on_init = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentFormattingRangeProvider = false
-    end,
-})
+lspconfig.templ.setup(noAutoformatSetup)
+lspconfig.html.setup(noAutoformatSetup)
+lspconfig.sqls.setup(noAutoformatSetup)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
