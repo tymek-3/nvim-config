@@ -125,8 +125,8 @@ return {
         -- use opts = {} for passing setup options
         -- this is equalent to setup({}) function
     },
-    { 'kevinhwang91/rnvimr',         lazy = false, },
-    { 'jmederosalvarado/roslyn.nvim' },
+    { 'kevinhwang91/rnvimr', lazy = false, },
+    -- { 'jmederosalvarado/roslyn.nvim' },
     {
         'brenoprata10/nvim-highlight-colors',
         opts = {
@@ -146,5 +146,4 @@ return {
             { "<leader>py", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
         },
     },
-    { "jmederosalvarado/roslyn.nvim" },
 }
