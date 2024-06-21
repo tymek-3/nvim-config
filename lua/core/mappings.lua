@@ -9,5 +9,7 @@ vim.keymap.set("n", "<leader>nf", vim.cmd.NamespaceFill)
 
 vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
 
+vim.keymap.set("n", "<leader>tt", vim.cmd.TransparentToggle)
+
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])

@@ -34,7 +34,7 @@ require('transparent').setup({
 
 
 function SetColor(color)
-    color = color or "tokyonight-night"
+    color = color or "eldritch"
     vim.cmd.colorscheme(color)
 end
 
