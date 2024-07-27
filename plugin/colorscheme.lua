@@ -20,14 +20,14 @@ require('transparent').setup({
         'EndOfBuffer',
     },
     extra_groups = {
-        -- "NvimTreeNormal",
-        -- "NvimTreeNormalFloat",
-        -- "NvimTreeNormalNC",
-        -- "NvimTreeEndOfBuffer",
-        -- "NvimTreeNormSignColumnalNC",
-        -- "NvimTreePopup",
-        -- "NvimTreeSignColumn",
-        -- "NvimTreeWinSeparator"
+        "NvimTreeNormal",
+        "NvimTreeNormalFloat",
+        "NvimTreeNormalNC",
+        "NvimTreeEndOfBuffer",
+        "NvimTreeNormSignColumnalNC",
+        "NvimTreePopup",
+        "NvimTreeSignColumn",
+        "NvimTreeWinSeparator"
     },                   -- table: additional groups that should be cleared
     exclude_groups = {}, -- table: groups you don't want to clear
 })

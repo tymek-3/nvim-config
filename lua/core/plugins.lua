@@ -60,15 +60,17 @@ return {
     },
     { 'saadparwaiz1/cmp_luasnip' },
     -- LSP ZERO
-
-    -- {
-    --     'nvim-tree/nvim-tree.lua',
-    --     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    --     config = function()
-    --         require("nvim-tree").setup()
-    --     end
-    -- },
-
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+    },
     { 'xiyaowong/transparent.nvim', lazy = false,                                    priority = 1000 },
     { "folke/todo-comments.nvim",   dependencies = { "nvim-lua/plenary.nvim" } },
     { 'nvim-lualine/lualine.nvim',  dependencies = { 'nvim-tree/nvim-web-devicons' } },
