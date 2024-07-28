@@ -13,3 +13,5 @@ vim.keymap.set("n", "<leader>tt", vim.cmd.TransparentToggle)
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set("n", "gv", "<C-w>vgd", { remap = true })
