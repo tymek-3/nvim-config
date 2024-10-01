@@ -10,15 +10,10 @@ end)
 
 -- here you can setup the language servers
 
-require("roslyn").setup({
-    on_attach = lsp_zero.on_attach,
-    capabilities = lsp_zero.capabilites
-})
-
-require('ionide').setup({
-    on_attach = lsp_zero.on_attach,
-    capabilities = lsp_zero.capabilites
-})
+-- require('ionide').setup({
+--     on_attach = lsp_zero.on_attach,
+--     capabilities = lsp_zero.capabilites
+-- })
 
 local lspconfig = require("lspconfig")
 
@@ -54,7 +49,6 @@ require('mason-lspconfig').setup({
         'templ',
         'htmx',
         'svelte',
-        'tsserver',
         'emmet_language_server',
         'lua_ls',
     },

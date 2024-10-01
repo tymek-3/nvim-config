@@ -82,44 +82,43 @@ return {
             lazy = false
         }
     },
-    { 'ThePrimeagen/vim-be-good' },
     { 'hrsh7th/vim-vsnip' },
-    { 'ionide/Ionide-vim' },
-    { 'kmonad/kmonad-vim' },
-    {
-        'olexsmir/gopher.nvim',
-        ft = "go",
-        config = function()
-            require("gopher").setup({
-                commands = {
-                    go = "go",
-                    gomodifytags = "gomodifytags",
-                    gotests = "~/go/bin/gotests", -- also you can set custom command path
-                    impl = "impl",
-                    iferr = "iferr",
-                },
-            })
-        end,
-        build = function()
-            vim.cmd [[silent! GoInstallDeps]]
-        end,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter"
-        }
-    },
+    -- { 'ionide/Ionide-vim' },
+    -- {
+    --     'olexsmir/gopher.nvim',
+    --     ft = "go",
+    --     config = function()
+    --         require("gopher").setup({
+    --             commands = {
+    --                 go = "go",
+    --                 gomodifytags = "gomodifytags",
+    --                 gotests = "~/go/bin/gotests", -- also you can set custom command path
+    --                 impl = "impl",
+    --                 iferr = "iferr",
+    --             },
+    --         })
+    --     end,
+    --     build = function()
+    --         vim.cmd [[silent! GoInstallDeps]]
+    --     end,
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-treesitter/nvim-treesitter"
+    --     }
+    -- },
 
-    {
-        "vhyrro/luarocks.nvim",
-        config = function()
-            -- require("luarocks").setup({})
-        end,
-    },
-    {
-        "rest-nvim/rest.nvim",
-        ft = "http",
-        dependencies = { "luarocks.nvim" },
-    },
+    -- {
+    --     "vhyrro/luarocks.nvim",
+    --     config = function()
+    --         -- require("luarocks").setup({})
+    --     end,
+    -- },
+    -- {
+    --     "rest-nvim/rest.nvim",
+    --     ft = "http",
+    --     dependencies = { "luarocks.nvim" },
+    -- },
+    { "rest-nvim/rest.nvim" },
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
@@ -127,25 +126,50 @@ return {
         -- use opts = {} for passing setup options
         -- this is equalent to setup({}) function
     },
-    { 'kevinhwang91/rnvimr',         lazy = false, },
-    { 'jmederosalvarado/roslyn.nvim' },
+    -- { 'kevinhwang91/rnvimr', lazy = false, },
+    {
+        'seblj/roslyn.nvim',
+        ft = "cs",
+        opts = {
+            config = {
+                -- Here you can pass in any options that that you would like to pass to `vim.lsp.start`
+                -- The only options that I explicitly override are, which means won't have any effect of setting here are:
+                --     - `name`
+                --     - `cmd`
+                --     - `root_dir`
+                --     - `on_init`
+                settings = {
+                    ["csharp|background_analysis"] = {
+                        dotnet_analyzer_diagnostics_scope = "fullSolution",
+                        dotnet_compiler_diagnostics_scope = "fullSolution",
+                    },
+                    ["csharp|completion"] = {
+                        dotnet_show_completion_items_from_unimported_namespaces = true,
+                        dotnet_show_name_completion_suggestions = true,
+                    }
+                }
+            },
+            exe = {
+                "dotnet",
+                vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+            },
+            -- NOTE: Set `filewatching` to false if you experience performance problems. will fallback to nvims filewatching
+            filewatching = true,
+        }
+    },
+    -- { 'jmederosalvarado/roslyn.nvim' },
     {
         'brenoprata10/nvim-highlight-colors',
         opts = {
             enable_tailwind = true,
-        }
+        },
     },
-    { "kmonad/kmonad-vim" },
-    -- { "luukvbaal/nnn.nvim" },
     {
-        "DreamMaoMao/yazi.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
-
-        keys = {
-            { "<leader>py", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
-        },
+        dir = "~/workspace/lua/autonamespace",
+        ft = "cs",
+        name = "autonamespace",
+        config = function()
+            require("autonamespace").setup({})
+        end
     },
 }
