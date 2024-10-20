@@ -41,7 +41,7 @@
   "Class": {
     "prefix": "class",
     "body": [
-      "public class ${1:$TM_FILENAME_BASE} {",
+      "public sealed class ${1:$TM_FILENAME_BASE} {",
       "    $0",
       "}"
     ],
@@ -295,21 +295,6 @@
       "}"
     ],
     "description": "Lock statement"
-  },
-  "MessageBox.Show": {
-    "prefix": "mbox",
-    "body": [
-      "System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"
-    ],
-    "description": "MessageBox.Show"
-  },
-  "Namespace": {
-    "prefix": "namespace",
-    "body": [
-      "namespace ${1:Name};",
-      "$0"
-    ],
-    "description": "Namespace"
   },
   "#if": {
     "prefix": "ifd",

@@ -63,23 +63,20 @@ cmp.setup({
     sources = {
         { name = "luasnip" },
         { name = "nvim_lsp" },
+        { name = "roslyn" },
     },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm {
-            behaviour = cmp.ConfirmBehavior.Replace,
-            select = true
+            select = false
         },
         ['<Tab>'] = cmp.mapping.confirm {
             behaviour = cmp.ConfirmBehavior.Replace,
             select = true
         },
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-k>'] = cmp.mapping.select_prev_item {
-            behaviour = cmp.SelectBehavior.Select
-        },
-        ['<C-j>'] = cmp.mapping.select_next_item {
-            behaviour = cmp.SelectBehavior.Select
-        }
+        ['<C-k>'] = cmp.mapping.scroll_docs(4),
+        ['<C-j>'] = cmp.mapping.scroll_docs(-4),
+
     },
 })
 

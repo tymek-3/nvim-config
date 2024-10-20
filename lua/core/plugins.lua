@@ -106,19 +106,6 @@ return {
     --         "nvim-treesitter/nvim-treesitter"
     --     }
     -- },
-
-    -- {
-    --     "vhyrro/luarocks.nvim",
-    --     config = function()
-    --         -- require("luarocks").setup({})
-    --     end,
-    -- },
-    -- {
-    --     "rest-nvim/rest.nvim",
-    --     ft = "http",
-    --     dependencies = { "luarocks.nvim" },
-    -- },
-    { "rest-nvim/rest.nvim" },
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
@@ -172,4 +159,10 @@ return {
             require("autonamespace").setup({})
         end
     },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {},
+    },
+    { "nvim-pack/nvim-spectre" },
+    { 'mistweaverco/kulala.nvim', opts = {} },
 }
