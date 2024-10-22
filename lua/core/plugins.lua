@@ -136,15 +136,15 @@ return {
                     }
                 }
             },
-            exe = {
-                "dotnet",
-                vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
-            },
+            -- leave commented if using mason
+            -- exe = {
+            --     "dotnet",
+            --     vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+            -- },
             -- NOTE: Set `filewatching` to false if you experience performance problems. will fallback to nvims filewatching
             filewatching = true,
         }
     },
-    -- { 'jmederosalvarado/roslyn.nvim' },
     {
         'brenoprata10/nvim-highlight-colors',
         opts = {

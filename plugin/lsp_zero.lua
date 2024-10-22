@@ -41,7 +41,12 @@ lspconfig.templ.setup(noAutoformatSetup)
 lspconfig.html.setup(noAutoformatSetup)
 lspconfig.sqls.setup(noAutoformatSetup)
 
-require('mason').setup({})
+require('mason').setup({
+    registries = {
+        'github:mason-org/mason-registry',
+        'github:syndim/mason-registry'
+    },
+})
 require('mason-lspconfig').setup({
     ensure_installed = {
         -- 'omnisharp',
