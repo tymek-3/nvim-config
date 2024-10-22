@@ -17,18 +17,6 @@ end)
 
 local lspconfig = require("lspconfig")
 
-lspconfig.emmet_language_server.setup({
-    filetypes = {
-        "html",
-        "svelte",
-        "templ",
-    },
-    on_init = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentFormattingRangeProvider = false
-    end
-})
-
 local noAutoformatSetup = {
     on_init = function(client)
         client.server_capabilities.documentFormattingProvider = false
@@ -36,6 +24,14 @@ local noAutoformatSetup = {
     end
 }
 
+lspconfig.emmet_language_server.setup({
+    filetypes = {
+        "html",
+        "svelte",
+        "templ",
+    },
+    on_init = noAutoformatSetup.on_init
+})
 
 lspconfig.templ.setup(noAutoformatSetup)
 lspconfig.html.setup(noAutoformatSetup)
@@ -49,13 +45,13 @@ require('mason').setup({
 })
 require('mason-lspconfig').setup({
     ensure_installed = {
-        -- 'omnisharp',
         'gopls',
         'templ',
         'htmx',
         'svelte',
         'emmet_language_server',
         'lua_ls',
+        "roslyn"
     },
     handlers = {
         lsp_zero.default_setup,
@@ -72,7 +68,7 @@ cmp.setup({
     },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm {
-            select = false
+            select = true
         },
         ['<Tab>'] = cmp.mapping.confirm {
             behaviour = cmp.ConfirmBehavior.Replace,
@@ -86,5 +82,6 @@ cmp.setup({
 })
 
 vim.filetype.add({ extension = { templ = "templ" } })
+vim.lsp.inlay_hint.enable(true)
 
 require('lspconfig').lua_ls.setup({})

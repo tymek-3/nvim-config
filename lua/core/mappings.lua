@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
 
 vim.keymap.set("n", "<leader>tt", vim.cmd.TransparentToggle)
 vim.keymap.set("n", "<leader>sr", vim.cmd.Spectre)
+vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.refresh)
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
