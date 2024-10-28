@@ -51,7 +51,6 @@ require('mason-lspconfig').setup({
         'svelte',
         'emmet_language_server',
         'lua_ls',
-        "roslyn"
     },
     handlers = {
         lsp_zero.default_setup,
