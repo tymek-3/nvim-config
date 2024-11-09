@@ -166,9 +166,8 @@ return {
         },
     },
     {
-        dir = "~/workspace/lua/autonamespace",
         ft = "cs",
-        name = "autonamespace",
+        "tymek-3/autonamespace.nvim",
         config = function()
             require("autonamespace").setup({})
         end
