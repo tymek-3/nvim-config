@@ -58,14 +58,7 @@ return {
                 header = '',
                 prefix = '',
             },
-            signs = {
-                text = {
-                    [vim.diagnostic.severity.ERROR] = '✘',
-                    [vim.diagnostic.severity.WARN] = '▲',
-                    [vim.diagnostic.severity.HINT] = '⚑',
-                    [vim.diagnostic.severity.INFO] = '»',
-                },
-            },
+            signs = false,
         })
 
         -- Add cmp_nvim_lsp capabilities settings to lspconfig

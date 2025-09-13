@@ -1,5 +1,5 @@
 return {
-	{ 
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
@@ -15,6 +15,7 @@ return {
                     "go",
                     "templ",
                     "html",
+                    "http",
                     "css",
                 },
             })

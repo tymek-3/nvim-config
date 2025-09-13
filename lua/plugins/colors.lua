@@ -1,23 +1,35 @@
 local function enable_transparency()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 end
+
+local colorscheme = "kanagawa-wave"
+
 return {
     {
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            vim.cmd.colorscheme "kanagawa-wave"
+            vim.cmd.colorscheme(colorscheme)
             -- enable_transparency()
         end
-	},
-    { 
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme(colorscheme)
+            -- enable_transparency()
+        end
+    },
+    {
         "nvim-lualine/lualine.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons"
-        }, 
+        },
         opts = {
-            theme = "kanagawa-wave",
+            theme = colorscheme,
             icons_enabled = true,
             component_separators = { left = '', right = '' },
             section_separators = { left = '', right = '' },
