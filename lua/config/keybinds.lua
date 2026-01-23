@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>fe", vim.cmd.NvimTreeToggle)
 vim.keymap.set('n', '<leader>nh', vim.cmd.noh)
 vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
 
