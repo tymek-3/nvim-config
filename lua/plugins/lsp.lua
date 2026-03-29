@@ -124,6 +124,13 @@ return {
                         },
                     })
                 end,
+                clangd = function()
+                    require('lspconfig').clangd.setup({
+                        init_options = {
+                            fallbackFlags = { '-std=c++23' }
+                        }
+                    })
+                end
             },
         })
 

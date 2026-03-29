@@ -1,12 +1,12 @@
 return {
     {
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
             require("nvim-tree").setup({
                 actions = {
                     open_file = {
@@ -16,7 +16,7 @@ return {
                 view = {
                     side = "left",
                     width = 40
-                }
+                },
             })
         end,
     },
