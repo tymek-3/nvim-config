@@ -2,6 +2,8 @@ local function enable_transparency()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 end
 
+vim.keymap.set("n", "<leader>tt", enable_transparency)
+
 local colorscheme = "kanagawa-wave"
 
 return {
